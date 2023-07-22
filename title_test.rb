@@ -1,3 +1,4 @@
+require 'webdrivers'
 require 'selenium-webdriver'
 
 # Создаем экземпляр веб-драйвера Chrome с указанием пути к драйверу
