@@ -1,2 +1,2 @@
 source 'https://rubygems.org'
-gem 'webdrivers',github:'titusfortner/webdrivers'
+gem 'webdrivers', '~> 5.0', require: false
