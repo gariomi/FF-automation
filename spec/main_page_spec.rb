@@ -13,12 +13,19 @@ DOMAINS = [
 ]
 
 describe 'Main page' do
-  it 'check title on page' do
+  it 'has correct h1 title' do
     DOMAINS.each do |domain|
       @driver.get(domain[:url])
       element = @driver.find_element(:xpath, '//*[@id="app"]/div[2]/div/div[1]/div[2]/div/div/div[1]/div/h1')
       title_h1 = element.text
       expect(title_h1).to include(domain[:expected_title])
     end
+  end
+
+  it 'has correct phone number' do
+    @driver.get('https://flyforsinkelse.dk')
+    element = @driver.find_element(:xpath, '//*[@id="app"]/div[1]/div/div[2]/nav/div[2]/div[1]/a')
+    phone_number = element.text
+    expect(phone_number).to include("+45 78730974")
   end
 end
